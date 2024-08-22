@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+
 import './App.css';
+import Home from './pages/Home';
+import Media from './pages/Media';
+import { useState } from 'react';
 
 function App() {
+  const [nav, setNav] = useState(false)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <header className={`${nav ? 'on' : ''}`}>
+        <button onClick={()=>{setNav(!nav)}} ></button>
+        <Link to='/media' state='movies'>MOVIES</Link>
+        <Link to='/media' state='music'>MUSIC</Link>
+        <Link to='/media' state='apps'>APPS</Link>
+        <Link to='/media' state='software'>SOFTWARE</Link>
       </header>
-    </div>
+      <main>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/media' element={<Media />} />
+          </Routes>
+      </main>
+    </Router>
   );
 }
 
