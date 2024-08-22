@@ -1,5 +1,4 @@
 import React from 'react'
-import img from '../img'
 
 const Item = ({item}) => {
       let idx;
