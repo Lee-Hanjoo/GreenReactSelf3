@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'
 
 import './App.css';
 import Home from './pages/Home';
@@ -9,7 +9,7 @@ function App() {
   const [nav, setNav] = useState(false)
   
   return (
-    <Router basename='/reactSelf'>
+    <Router>
       <header className={`${nav ? 'on' : ''}`}>
         <button onClick={()=>{setNav(!nav)}} ></button>
         <Link to='/media' state='movies'>MOVIES</Link>

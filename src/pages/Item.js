@@ -9,7 +9,7 @@ const Item = ({item}) => {
       }
     return (
       <li>
-        <img src={`../img/${idx}.jpg`} />
+        <img src={`./img/${idx}.jpg`} />
         <p>{item.name}</p>
         <span>{item.detail}</span>
       </li>
