@@ -1,4 +1,5 @@
 import React from 'react'
+import img from '../../public/'
 
 const Item = ({item}) => {
       let idx;
@@ -9,7 +10,7 @@ const Item = ({item}) => {
       }
     return (
       <li>
-        <img src={`./img/${idx}.jpg`} />
+        <img src={`../../public/img/${idx}.jpg`} />
         <p>{item.name}</p>
         <span>{item.detail}</span>
       </li>
