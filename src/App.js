@@ -9,7 +9,7 @@ function App() {
   const [nav, setNav] = useState(false)
   
   return (
-    <Router>
+    <Router basename='/reactSelf'>
       <header className={`${nav ? 'on' : ''}`}>
         <button onClick={()=>{setNav(!nav)}} ></button>
         <Link to='/media' state='movies'>MOVIES</Link>
